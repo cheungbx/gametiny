@@ -29,15 +29,32 @@
 
 // SSD1306Device SSD1306;
 
+bool PB1Interrupt = false;
+unsigned long keyTime = 0;
+
 void beep(int bCount,int bDelay){
 
   for (int i = 0; i<=bCount; i++){digitalWrite(4,HIGH);for(int i2=0; i2<bDelay; i2++){__asm__("nop\n\t");}digitalWrite(4,LOW);for(int i2=0; i2<bDelay; i2++){__asm__("nop\n\t");}}
 }
 
+// Interrupt handlers
+ISR(PCINT0_vect){ // PB1 fire button interrupt           
+PB1Interrupt = true;
+keyTime = millis();
+}
 
 void setup() {
     uint8_t p = 0xff;
+    
   // put your setup code here, to run once:
+  
+  
+// for Tiny Joypad
+  DDRB = 0b00010000;    // set PB4 "5th bit from the right" as output (for the speaker)
+  PCMSK = 0b0000010; // pin change mask: listen to portb b1 Fire button
+  GIMSK |= 0b00100000;  // enable PCINT interrupt }
+
+  
   _delay_ms(40);
   SSD1306.ssd1306_init();
 
@@ -68,7 +85,19 @@ String text1;
   SSD1306.ssd1306_string_font6x8("     ");
   SSD1306.ssd1306_setpos(60,2);
   SSD1306.ssd1306_string_font6x8(text);
-  
+
+  // test if PB1 interrupt works
+  if (PB1Interrupt) {
+     SSD1306.ssd1306_setpos(90,2);
+     SSD1306.ssd1306_string_font6x8("INT");   
+     }
+  // wait 0.3 seconds for display to be viewable before turning off.
+  if (PB1Interrupt && millis() - keyTime > 300) {
+     SSD1306.ssd1306_setpos(90,2);
+     SSD1306.ssd1306_string_font6x8("***");   
+     PB1Interrupt = false;
+     }
+   
   SSD1306.ssd1306_setpos(0, 3);
   SSD1306.ssd1306_string_font6x8(" A0:");
   text1 = String (analogRead (A0));
