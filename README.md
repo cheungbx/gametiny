@@ -1,5 +1,5 @@
 # tinyboy
-Collection of games playable on Tiny Boy and schematics. Tony Boy is a modified version of the Attiny Joypad originally created by Based on original version of Attiny Joypad  created by Daniel C. (Electro L.I.B) 2018 GPL V3. This modification  adds a header for USBasp programmer that doubles up as a socket for the OLED. Refer to the schematics on the files section. Schematics created on easyEDA.com.
+Collection of games playable on Tiny Boy and schematics. Tony Boy is a modified version of the Attiny Joypad originally created by Daniel C. (Electro L.I.B) 2018 GPL V3. This modification  adds a header for USBasp programmer that doubles up as a socket for the OLED. Refer to the schematics on the files section. Schematics created on easyEDA.com.
 
 *** WARNING ***
 Inserting the battery or the OLED or the header in the wrong direction may cause permanent damage to the ATTiny85 chip and/or the OLED, and/or the USB port of your computer
