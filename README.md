@@ -14,3 +14,21 @@ Game buttons are all 6x6 tap-tic buttons. The up/down/left/right buttons can be 
 Use small PC speakers or  buzzers without an internal beeper circuit as sound output,
 Test out the circuit on a breadboard first before soldering on a circuit board.
 Use laminated (isolated) wire for connection between points. Use the small soldering tip and apply flux.
+
+*** Games (modified to work on Tinyboy) and tools for testing Tinyboy in this repository ***
+Test_ATtiny.ino - test screen, buttons and speaker of the Tiny boy. Useful tools if your button is not working.
+BatBonanzaAttinyArcade.ino - traditional ping pong game , modified to have single button, dual button, and two players mode.
+Frogger_Attiny_Arcade - push a frog to cross the street and river.
+MorseAttinyArcade.ino - a great too to practice keying morse codes that listend into what you keyed in and convert that to text.
+Schematic_Tinyboy - schematic of the Tinyboy in pdf and png format - This modification  adds a header for USBasp programmer that doubles up as a socket for the OLED.
+SpaceAttackAttiny.ino - modified buttons logic to play on Tinyboy
+Tetris_Multi_Button.ino - modified buttons logic to play on Tinyboy
+Tiny_space_invaders.ino - a copy of the original game without modification.
+tinyarkanoid.ino - a copy of the original game without modification.
+tinybomber.ino - a copy of the original game without modification.
+tinygilbert.ino - a copy of the original game without modification.
+tinypacman.ino - a copy of the original game without modification.
+tinyPinball.ino - a copy of the original game without modification.
+UFO_Breakout_Arduino.ino - load 2 games at the same time to your Tiny boy and select which one to play. Modified for Tiny boy buttons.
+UFO_Stacker_Attiny.ino - dual game set for UFO attack and Stacker . Modified for Tiny boy buttons.
+WrenRollercoasterAttinyArcade.ino - roller coaster game modified for Tiny boy.
