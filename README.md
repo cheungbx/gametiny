@@ -64,20 +64,6 @@ Use laminated (isolated) wire for connection between points. Use the small solde
 
 Refer to the schematics on the files section. Schematics created on easyEDA.com.
 
-*** WARNING ***
-Inserting the battery or the OLED or the header in the wrong direction may cause permanent damage to the ATTiny85 chip and/or the OLED, and/or the USB port of your computer
-Beware of different pin layout of OLED from different manfacturers that may swap the positions of VCC and GND, and SCL and SDA.
-ATtiny85 boards with USB ports are not suitable for this project. The bootloader on such boards uses up almost half of the program memory space with insufficient space for game program.
-Unless you know how to solder surface mount components (SMD), buy the raw/bare dual in line ATtin85 for this project. and use an IC socket. 
-Programming the ATtiny85 is a bit tricky. Not every Arduino UNO, NANO board will work. Clone Nano/Uno from China may not work.
-USBasp programmer is preferred. You need to create the cable to connect the gametiny header to the USBasp header as shown in the schematics at the bottom  right
- 
-*** TIPS ***
-Game buttons are all 6x6 tap-tic buttons. The up/down/left/right buttons can be replaced by a 5-direction mini joystick-like integrated button.
-Use small PC speakers or  buzzers without an internal beeper circuit as sound output,
-Test out the circuit on a breadboard first before soldering on a circuit board.
-Use laminated (isolated) wire for connection between points. Use the small soldering tip and apply flux.
-
 *** Games (modified to work on gametiny) and tools for testing gametiny in this repository ***
 Test_ATtiny.ino - test screen, buttons and speaker of the gametiny. Useful tools if your button is not working.
 BatBonanzaAttinyArcade.ino - traditional ping pong game , modified to have single button, dual button, and two players mode.
